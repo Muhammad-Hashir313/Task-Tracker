@@ -1,11 +1,11 @@
 import "../App.css"
 import Button from './Button'
 
-const Header = ({ title }) => {
+const Header = ({ title, onAdd, showAdd }) => {
     return (
         <header className='header'>
             <h1>{title}</h1>
-            <Button text="Add" bgColor="green" />
+            <Button showAdd={showAdd} text={showAdd ? 'Close' : 'Add'} bgColor={showAdd ? 'red' : 'green'} onClick={onAdd} />
         </header>
     )
 }
